@@ -1,0 +1,22 @@
+nav ul {
+  background: blue;
+}
+.inline,
+nav ul {
+  color: red;
+}
+.menu {
+  margin: 0 auto;
+  line-height: 1.2;
+}
+.menu li.item,
+.menu .container {
+  padding: 10px;
+}
+.container {
+  width: 10px;
+}
+li:nth-child(1n+3),
+.child {
+  color: white;
+}

@@ -1,0 +1,41 @@
+nav ul{
+	&:extend(.inline);
+	background: blue;
+}
+.inline{
+	color: red;
+}
+
+
+.menu{
+	margin: 0 auto;
+	line-height: 1.2;
+	li.item{
+		padding: 10px
+	}
+}
+
+// viet chinh xac selector
+
+.container:extend(li.item all){
+	width: 10px;
+}
+
+// trong bieu thuc nth
+
+
+li:nth-child(1n+3){
+	color: white;
+}
+
+.child:extend(li:nth-child(1n+3)){
+
+}
+
+
+
+
+
+
+
+

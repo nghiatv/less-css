@@ -1,0 +1,87 @@
+//Khai báo biến
+
+@link-color: #3d3d3d;
+@link-color-on-hover: darken(@link-color, 10%);
+
+
+a, .link{
+	color: @link-color;
+}
+
+a:hover{
+	color: @link-color-on-hover;
+}
+
+
+// Khai báo biến nội suy
+
+@mySelector: banner;
+
+.@{mySelector}{
+	font-weight: bold;
+	line-height: 20px;
+	margin: 0 auto;	
+}
+
+
+// Khai báo biến nội suy URL
+
+@images: "../img";
+
+body{
+	background: url("@{images}/white-sand.png")
+}
+
+//Sử dụng biến nội suy trong khai  báo các import
+
+//Khai báo.
+
+@themes: "themes";
+
+@import "@{themes}/prefix.less";
+
+
+// Sử dụng nội suy biến trong thuộc tính CSS
+
+@property: color;
+
+
+.widget{
+	@{property}: #ccc;
+	background-@{property} :#ddd;
+}
+
+@nghiatv : "Toi la Nghia";
+@var : "nghiatv";
+
+.widget:before{
+	content: @@var;
+}
+
+// Lazy loading trong khai bao bien
+
+
+.widget{
+	width: @size;
+}
+
+@size : @a;
+@a : 9%;
+
+
+// Ghi de bien khi import
+
+@base-color: red;
+
+p{
+	color: @base-color;
+}
+
+p:hover{
+	color: @dark-color;
+}
+
+
+
+
+
