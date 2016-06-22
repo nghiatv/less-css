@@ -1,0 +1,37 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    background: lightblue;
+}
+
+
+/* Tạo mixin sử dụng như hàm */
+
+.mixin() {
+    @width: 50px;
+    @height: 100%;
+}
+
+.caller {
+    .mixin();
+    width: @width;
+    height: @height;
+}
+
+
+/* Hoặc ta tạo một hàm xử lý */
+
+.average(@a, @b) {
+    @average: ( (@a+@b) /2);
+}
+
+.caller-2 {
+    .average(20px, 100px);
+    width: @average;
+}

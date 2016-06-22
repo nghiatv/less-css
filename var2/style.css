@@ -1,0 +1,64 @@
+/* LESS docs: http://lesscss.org/#-variables */
+#header {
+  color: #6c94be;
+  margin: 2em;
+}
+h1:before {
+  /* It is also possible to define variables with a variable name. */
+  content: "I am beginner. ";
+  /* compiles to content: "I am fnord."; */
+  color: purple;
+}
+/* =VARIABLES (LESS @variables do not get compiled into the final CSS file)
+   ---------------------------------------------------------------------------------------------------- */
+/*cream*/
+/*purple/grey*/
+/*mud*/
+/*lime*/
+/*grey*/
+/*grey*/
+/*grey*/
+/*orange*/
+/* =MIXINS
+   ---------------------------------------------------------------------------------------------------- */
+/* =BASE STYLES
+   ---------------------------------------------------------------------------------------------------- */
+body {
+  background: #fffaef;
+  color: #4f4351;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 2em;
+}
+h1,
+h2 {
+  color: #4f4351;
+}
+h3,
+h4,
+h5 {
+  color: #4f4351;
+}
+small,
+hr {
+  border-top: 1px solid rgba(108, 148, 190, 0.2);
+  color: rgba(108, 148, 190, 0.5);
+  display: block;
+  margin: 1em 0;
+  padding: 1em 0;
+  opacity: 50%;
+  filter: alpha(opacity=50);
+}
+small a:link,
+hr a:link,
+small a:visited,
+hr a:visited {
+  color: rgba(108, 148, 190, 0.75);
+}
+small a:hover,
+hr a:hover,
+small a:focus,
+hr a:focus,
+small a:active,
+hr a:active {
+  color: rgba(108, 148, 190, 0.9);
+}

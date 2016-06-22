@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@defaultThemeColor: lightblue;
+@borderSize: 20px;
+@borderColor: @defaultThemeColor - #222;
+.container {
+    width: 800px;
+    margin: 50px auto;
+}
+
+.shape {
+    width: 200px;
+    height: 200px;
+    float: left;
+    background: @defaultThemeColor;
+    margin-right: 20px;
+    .border-radius;
+    .border();
+}
+
+.border(@borderColor: @borderColor, @borderSize: @borderSize) {
+    border: @borderSize solid @borderColor;
+}
+
+// khong tham so truyen vao
+.border-radius() {
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    border-radius: 20px;
+}
+
+// co tham so truyen vao ( 1 tham so)
+.border-radius-2(@radius) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    -ms-border-radius: @radius;
+    border-radius: @radius;
+}
+
+.border #shape1 {
+    .border-radius-2(50%);
+}
+
+#shape2 {
+    .border-radius-2( 0);
+}

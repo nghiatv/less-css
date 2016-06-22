@@ -1,0 +1,79 @@
+body,
+html,
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+// Khai bao bien su dung
+@bg-color: lightblue;
+@bg-color-lv1: darken(@bg-color, 5%);
+@bg-color-lv2: darken(@bg-color-lv1, 5%);
+@bg-color-hover: darken(@bg-color, 20%);
+@bg-color-active: darken(spin(@bg-color, 180), 5%);
+ul {
+    border: 1px solid #e7e7e7;
+    border-bottom: none;
+    width: 100%;
+    /* the li nam ben trong the ul */
+    > li {
+        font-family: "Lato", sans-serif;
+        float: left;
+        font-size: 18px;
+        border-right: 1px solid white;
+        position: relative;
+        background-color: @bg-color;
+        /* the a nam trong the li */
+        a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            &:hover:not(.active) {
+                background: @bg-color-hover;
+            }
+            &.active {
+                color: white;
+                background-color: @bg-color-active;
+            }
+        }
+        &:last-child {
+            border: none;
+        }
+        &:hover {
+            > ul {
+                display: block;
+            }
+        }
+        > ul {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            display: none;
+            width: 150px;
+            > li {
+                background: @bg-color-lv1;
+                width: 100%;
+                display: block;
+                border: none;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                > ul {
+                    &:extend(ul >li >ul);
+                    top: 0px;
+                    left: 100%;
+                    > li {
+                        &:extend(ul > li > ul > li);
+                        background: @bg-color-lv2;
+                    }
+                }
+                &:hover {
+                    > ul {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
