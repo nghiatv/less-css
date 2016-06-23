@@ -1,0 +1,68 @@
+@defaultHex: #8a5c16;
+@red: red(@defaultHex);
+@green: green(@defaultHex);
+@blue: blue(@defaultHex);
+// Viet ham chuyen doi 
+.origin() {
+    // Ham danh cho IE 8
+    background-color: rgb(@red, @green, @blue);
+    filter: alpha(opacity=1);
+    // Ham binh thuong
+    background-color: rgba(@red, @green, @blue, 1);
+}
+
+.red() {
+    background-color: rgba(@red, 0, 0, 1);
+}
+
+.green() {
+    background-color: rgba(0, @green, 0, 1);
+}
+
+.blue() {
+    background-color: rgba(0, 0, @blue, 1);
+}
+
+.font-style {
+    font-family: Helvetica, Arial, sans-serif;
+    width: 160px;
+    font-size: 12px;
+    text-align: center;
+    padding: 15px;
+    font-size: 30px;
+    line-height: 5;
+    margin-top: 5px;
+    color: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 960px;
+    margin: 50px auto;
+}
+
+.shape {
+    width: 180px;
+    height: 180px;
+    float: left;
+    margin-right: 20px;
+    .origin();
+    .font-style();
+}
+
+#shape1 {
+    .red;
+}
+
+#shape2 {
+    .green;
+}
+
+#shape3 {
+    .blue;
+}
